@@ -6,6 +6,7 @@ package com.example.java_study.objects_and_classes;
 
 //import tempClass;  //ERROR default package classes cannot be imported from a named packaged class
 import static java.util.stream.Collectors.*;
+
 //  import java.awt.List;  //ERROR importing classes with same name
 
 
