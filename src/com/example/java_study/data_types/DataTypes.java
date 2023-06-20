@@ -29,7 +29,7 @@ public class DataTypes {
 
 
     //var
-    var g = 13;  //invalid. can only be used in local variables. can NOt be used in method parameters or return types
+    //var g = 13;  //invalid. can only be used in local variables. can NOt be used in method parameters or return types
 
 
     static {
