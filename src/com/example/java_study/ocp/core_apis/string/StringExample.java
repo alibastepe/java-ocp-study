@@ -44,6 +44,42 @@ public class StringExample {
         // The indent() method adds the same number of blank spaces to the beginning of each line if you pass a positive number.
         // If you pass a negative number, it tries to remove that number of whitespace characters from the beginning of the line.
         // If you pass zero, the indentation will not change.
+        var block = """
+                    a
+                     b
+                    c""";
+        var concat = " a\n"
+                    + "  b\n"
+                    + " c";
+        System.out.println(block.length());                 // 6
+        System.out.println(concat.length());                // 9
+        System.out.println(block.indent(1).length());       // 10
+        System.out.println(concat.indent(-1).length());     // 7
+        System.out.println(concat.indent(-4).length());     // 6
+        System.out.println(concat.stripIndent().length());  // 6
+    }
+
+    void translateEscapeExample() {
+        //can be used for \t (tab), \n (new line), \s (space), \" (double quote), and \' (single quote.)
+        var str = "1\\t2";
+        System.out.println(str);                    // 1\t2
+        System.out.println(str.translateEscapes()); // 1    2
+    }
+
+    void emptyCheck() {
+        System.out.println(" ".isEmpty()); // false. string is not empty, it has space characters
+        System.out.println("".isEmpty());  // true
+        System.out.println(" ".isBlank()); // true
+        System.out.println("".isBlank());  // true
+    }
+
+    void formatting()  {
+        var pi = 3.14159265359;
+        System.out.format("[%f]",pi);      // [3.141593]
+        System.out.format("[%12.8f]",pi);  // [  3.14159265]
+        System.out.format("[%012f]",pi);   // [00003.141593]
+        System.out.format("[%12.2f]",pi);  // [        3.14]
+        System.out.format("[%.3f]",pi);    // [3.142]
     }
 
 }
