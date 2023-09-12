@@ -66,6 +66,7 @@ public class StringStudy {
 
     void stringBuilder()  {
         //StringBuilder stores a MUTABLE sequence of characters
+        //String builder is very efficient when user needs to modify a sequence of characters
         //similar to String class, uses the concept of CompactStrings
 
         StringBuilder sb = new StringBuilder(); //init. capacity 16
@@ -84,6 +85,34 @@ public class StringStudy {
         //no trim method
 
         sb.replace(4,7,"nnn");  //  mydtnnnsddfdf
+
+        sb.replace(4,7,"nnnnnn");  //  mydtnnnnnnsddfdf
+
+
+        sb.subSequence(3, 5);  //similar to substring method, returns a CharSequence     "tn"
+    }
+
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder(); //init. capacity 16
+
+        sb = new StringBuilder("myStr");   //underlying byte[] is created with bigger capacity
+
+        sb.append("dfsddf");  //  myStrdfsddf
+        sb.append("wsdfred", 2, 4);  // myStrdfsddfdf
+
+        sb.insert(2, "ddf"); // myddfStrdfsddfdf
+
+        sb.delete(3, 6); //  mydtrdfsddfdf
+
+        //no trim method
+
+
+
+        sb.replace(4,7,"nnnnnn");  //  mydtnnnnnnsddfdf
+
+
+
+        System.out.println(sb.toString());
     }
 
 

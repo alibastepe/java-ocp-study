@@ -1,7 +1,12 @@
 package com.example.java_study.ocp.methods;
 
 public class MethodDeclaration {
-    public void skip1() {}
+
+
+    int g;
+    public void skip1() {
+        g++;
+    }
     default void skip2() {} // DOES NOT COMPILE
     void public skip3() {}  // DOES NOT COMPILE
     void skip4() {}
@@ -22,7 +27,7 @@ public class MethodDeclaration {
     public void zooAnimalCheckup(boolean isWeekend) {
         final int rest; //only final is allowed for local variable
         if(isWeekend) rest = 5; else rest = 20;
-        System.out.print(rest);
+        System.out.print(rest);  //this compiles because rest is definitely assigned a value aboe line
 
         final var giraffe = new Animal();
         final int[] friends = new int[5];
@@ -30,6 +35,14 @@ public class MethodDeclaration {
         rest = 10;               // DOES NOT COMPILE
         giraffe = new Animal();  // DOES NOT COMPILE
         friends = null;          // DOES NOT COMPILE
+    }
+
+    public void walkDog(int start, int... steps) {
+        System.out.println(steps.length);
+    }
+
+    public void callVarArg() {
+        walkDog(1, null);  //compiles, but throws null pointer exception at runtime
     }
 
 }

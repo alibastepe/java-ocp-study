@@ -1,6 +1,6 @@
 package com.example.java_study.inheritance;
 
-public interface InterfaceExample {
+public  interface InterfaceExample {
     int intField = 5;
     int finalIntField = 5;
 
@@ -12,7 +12,7 @@ public interface InterfaceExample {
         InterfaceExample.myStaticMethod();   //allowed
     }
 
-    default void myDefaultMethod2()  {  //"this" can be used to access fields and methods
+    default  void myDefaultMethod2()  {  //"this" can be used to access fields and methods
 
     }
 

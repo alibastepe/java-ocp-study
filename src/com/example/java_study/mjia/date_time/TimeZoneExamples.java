@@ -10,9 +10,12 @@ public class TimeZoneExamples {
     void timeZone() {
         //When you have a ZoneId object, you can combine it with a LocalDate, a LocalDate-Time
         // or an Instant to transform it into ZonedDateTime instances
+        ZonedDateTime zoned = ZonedDateTime.of(2022, 1, 20, 6, 15,3, 500, romeZone);
+
         LocalDate date = LocalDate.of(2014, Month.MARCH, 18);
         ZonedDateTime zdt1 = date.atStartOfDay(romeZone);
         LocalDateTime dateTime = LocalDateTime.of(2014, Month.MARCH, 18, 13, 45);
+        ZonedDateTime zoned2 = ZonedDateTime.of(dateTime, romeZone);
         ZonedDateTime zdt2 = dateTime.atZone(romeZone);
         Instant instant = Instant.now();
         ZonedDateTime zdt3 = instant.atZone(romeZone);

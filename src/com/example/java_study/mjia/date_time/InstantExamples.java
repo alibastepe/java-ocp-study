@@ -1,6 +1,8 @@
 package com.example.java_study.mjia.date_time;
 
+import java.time.Duration;
 import java.time.Instant;
+import java.time.ZonedDateTime;
 import java.time.temporal.ChronoField;
 
 public class InstantExamples {
@@ -19,5 +21,13 @@ public class InstantExamples {
         //instant doesn’t provide any ability to handle units of time
         //that are meaningful to humans.
         int day = Instant.now().get(ChronoField.DAY_OF_MONTH); //ERROR
+
+        var now = Instant.now();
+        var later = Instant.now();
+        Duration.between(now, later).toMillis();
+
+        //ZonedDatetime can be converted to an instant but LocalDateTime cannot becuase it does not contain zone info
+        var zoned = ZonedDateTime.now();
+        zoned.toInstant(); // converted to GMT
     }
 }
